@@ -1,0 +1,183 @@
+﻿<Window x:Class="WindowsDrimmer.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowsDrimmer.Views" 
+        xmlns:vm="clr-namespace:WindowsDrimmer.ViewModels"
+        ResizeMode="CanMinimize"
+        WindowStyle="None">
+
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+    
+    <Grid Mouse.MouseDown="Grid_MouseDown">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="265*"/>
+                <ColumnDefinition Width="503*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Window Drimmer" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25 0 0 0"/>
+
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="1" Margin="0,0,0,-0.4">
+
+                <!--Hide window-->
+                <Button Style="{StaticResource ContorlWindowButton}" Click="HiddenButton">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="Bd" Background="Transparent">
+                                <Path x:Name="hideButton" Data="M43.332847,227.34088 L258.52612,223.55609"
+                                  VerticalAlignment="Bottom"
+                      Stretch="Uniform" Stroke="Aqua" StrokeThickness="2"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <EventTrigger RoutedEvent="MouseEnter" >
+                                    <BeginStoryboard Name="enter">
+                                        <Storyboard>
+                                            <ColorAnimation To="Gray"
+                                                        Storyboard.TargetName="hideButton"
+                                                        Storyboard.TargetProperty="Stroke.Color"
+                                                        FillBehavior="HoldEnd"
+                                                        Duration="0:0:1.5"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="MouseLeave" >
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation To="Aqua"
+                                                        Storyboard.TargetName="hideButton"
+                                                        Storyboard.TargetProperty="Stroke.Color"
+                                                        FillBehavior="HoldEnd"
+                                                        Duration="0:0:1.5"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <!--Max,min window-->
+                <Button Style="{StaticResource ContorlWindowButton}" Click="MinMaxButton">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="Transparent">
+                                <Path x:Name="minmaxButton" Fill="Transparent" Stretch="Uniform" Stroke="Aqua" StrokeThickness="2">
+                                    <Path.Data>
+                                        <RectangleGeometry Rect="50,50,25,25" />
+                                    </Path.Data>
+                                </Path>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <EventTrigger RoutedEvent="MouseEnter" >
+                                    <BeginStoryboard Name="enter">
+                                        <Storyboard>
+                                            <ColorAnimation To="Gray"
+                                                        Storyboard.TargetName="minmaxButton"
+                                                        Storyboard.TargetProperty="Stroke.Color"
+                                                        FillBehavior="HoldEnd"
+                                                        Duration="0:0:1.5"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="MouseLeave" >
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation To="Aqua"
+                                                        Storyboard.TargetName="minmaxButton"
+                                                        Storyboard.TargetProperty="Stroke.Color"
+                                                        FillBehavior="HoldEnd"
+                                                        Duration="0:0:1.5"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <!--Close-->
+                <Button Style="{StaticResource ContorlWindowButton}" Click="CloseButton">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="Bd" Background="Transparent">
+                                <Path x:Name="closeButtom" Data="M0,0 M0.2,0.2 L 0.8,0.8 M0.2,0.8 L0.8,0.2 M1,1"
+                      Stretch="Uniform" Stroke="Aqua" StrokeThickness="2"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <EventTrigger RoutedEvent="MouseEnter" >
+                                    <BeginStoryboard Name="enter">
+                                        <Storyboard>
+                                            <ColorAnimation To="Gray"
+                                                        Storyboard.TargetName="closeButtom"
+                                                        Storyboard.TargetProperty="Stroke.Color"
+                                                        FillBehavior="HoldEnd"
+                                                        Duration="0:0:1.5"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="MouseLeave" >
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation To="Aqua"
+                                                        Storyboard.TargetName="closeButtom"
+                                                        Storyboard.TargetProperty="Stroke.Color"
+                                                        FillBehavior="HoldEnd"
+                                                        Duration="0:0:1.5"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="257*"/>
+                <ColumnDefinition Width="127*"/>
+            </Grid.ColumnDefinitions>
+
+            <DataGrid Grid.Column="0"
+                      IsReadOnly ="True"
+                      ItemsSource="{Binding ProcessesSource}"
+                      SelectedItem="{Binding SelectProcess}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn  Header="ProcessesId" Binding="{Binding Id, Mode=OneTime}" Width="*"/>
+                    <DataGridTextColumn  Header="ProcessesName" Binding="{Binding ProcessName, Mode=OneTime}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="15*"/>
+                    <RowDefinition Height="15*"/>
+                    <RowDefinition Height="15*"/>
+                    <RowDefinition Height="25*"/>
+                </Grid.RowDefinitions>
+
+                <Label HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Row="0" Content="{Binding PId }"/>
+                <Label HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Row="1" Content="{Binding PName}"/>
+                <Label HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Row="2" Content="{Binding HWindow}"/>
+                <Button Grid.Row="3" 
+                        Content="Color Change"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Padding="8" 
+                        Command="{Binding ChangeColor}"/>
+            </Grid>
+        </Grid>
+        
+    </Grid>
+</Window>

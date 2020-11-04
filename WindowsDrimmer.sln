@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsDrimmer", "WindowsDrimmer\WindowsDrimmer.csproj", "{3B6242A3-19C2-449C-BC18-60BA1B1F4C85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsDrimmer.Base", "WindowsDrimmer.Base\WindowsDrimmer.Base.csproj", "{E93E85C0-4915-4D4C-88CE-52217D71349C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsDrimmer.ScreenDrimmer", "WindowsDrimmer.ScreenDrimmer\WindowsDrimmer.ScreenDrimmer.csproj", "{F95960C7-3C41-4E06-B598-41064450E60F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsDrimmer.Config", "WindowsDrimmer.Config\WindowsDrimmer.Config.csproj", "{22D27768-2121-42C0-99C2-DB2B42075E66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B6242A3-19C2-449C-BC18-60BA1B1F4C85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B6242A3-19C2-449C-BC18-60BA1B1F4C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B6242A3-19C2-449C-BC18-60BA1B1F4C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B6242A3-19C2-449C-BC18-60BA1B1F4C85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E93E85C0-4915-4D4C-88CE-52217D71349C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E93E85C0-4915-4D4C-88CE-52217D71349C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E93E85C0-4915-4D4C-88CE-52217D71349C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E93E85C0-4915-4D4C-88CE-52217D71349C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F95960C7-3C41-4E06-B598-41064450E60F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F95960C7-3C41-4E06-B598-41064450E60F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F95960C7-3C41-4E06-B598-41064450E60F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F95960C7-3C41-4E06-B598-41064450E60F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22D27768-2121-42C0-99C2-DB2B42075E66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22D27768-2121-42C0-99C2-DB2B42075E66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22D27768-2121-42C0-99C2-DB2B42075E66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22D27768-2121-42C0-99C2-DB2B42075E66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED7302A9-C9A8-40F4-A009-1A7F80C6E235}
+	EndGlobalSection
+EndGlobal
