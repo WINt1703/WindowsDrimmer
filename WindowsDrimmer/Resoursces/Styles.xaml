@@ -9,6 +9,7 @@
 
     <Style TargetType="DataGridCell">
         <Setter Property="Background" Value="#6B6B6B"/>
+        <Setter Property="BorderThickness" Value="0"/>
     </Style>
 
     <Style TargetType="DataGrid">
@@ -17,6 +18,8 @@
         <Setter Property="FontSize" Value="16.5"/>
         <Setter Property="AutoGenerateColumns" Value="False"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="HorizontalGridLinesBrush" Value="Black"/>
+        <Setter Property="VerticalGridLinesBrush" Value="Black"/>
     </Style>
 
     <Style TargetType="Grid">
@@ -34,7 +37,7 @@
         <Setter Property="Foreground" Value="#F7630C"/>
         <Setter Property="FontSize" Value="16.5"/>
     </Style>
-    
+
     <Style x:Key="ContorlWindowButton" TargetType="Button">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="Aqua"/>
@@ -42,5 +45,4 @@
         <Setter Property="Width" Value="30"/>
         <Setter Property="Margin" Value="8"/>
     </Style>
-
 </ResourceDictionary>

@@ -11,7 +11,7 @@
     <Window.DataContext>
         <vm:MainViewModel/>
     </Window.DataContext>
-    
+
     <Grid Mouse.MouseDown="Grid_MouseDown">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -31,11 +31,9 @@
                 <!--Hide window-->
                 <Button Style="{StaticResource ContorlWindowButton}" Click="HiddenButton">
                     <Button.Template>
-                        <ControlTemplate TargetType="Button">
+                        <ControlTemplate TargetType="Button" >
                             <Border x:Name="Bd" Background="Transparent">
-                                <Path x:Name="hideButton" Data="M43.332847,227.34088 L258.52612,223.55609"
-                                  VerticalAlignment="Bottom"
-                      Stretch="Uniform" Stroke="Aqua" StrokeThickness="2"/>
+                                <Path x:Name="hideButton" Data="M43.332847,227.34088 L258.52612,223.55609" VerticalAlignment="Bottom" Stretch="Uniform" Stroke="Aqua" StrokeThickness="2"/>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <EventTrigger RoutedEvent="MouseEnter" >
@@ -149,15 +147,38 @@
                 <ColumnDefinition Width="127*"/>
             </Grid.ColumnDefinitions>
 
-            <DataGrid Grid.Column="0"
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <DataGrid Grid.Row="0"
                       IsReadOnly ="True"
                       ItemsSource="{Binding ProcessesSource}"
-                      SelectedItem="{Binding SelectProcess}">
-                <DataGrid.Columns>
-                    <DataGridTextColumn  Header="ProcessesId" Binding="{Binding Id, Mode=OneTime}" Width="*"/>
-                    <DataGridTextColumn  Header="ProcessesName" Binding="{Binding ProcessName, Mode=OneTime}" Width="*"/>
-                </DataGrid.Columns>
-            </DataGrid>
+                      SelectedItem="{Binding SelectProcess}"                        
+                      RowHeaderWidth="0"
+                      >
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn  Header="ProcessesId" Binding="{Binding Id, Mode=OneTime}" Width="*"/>
+                        <DataGridTextColumn  Header="ProcessTitle" Binding="{Binding MainWindowTitle, Mode=OneTime}" Width="*"/>
+                        <DataGridTextColumn  Header="ProcessName" Binding="{Binding ProcessName, Mode=OneTime}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+
+                <Button HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Margin="20" 
+                        Padding="8" 
+                        Content="Update Processes" 
+                        Grid.Row="1"
+                        Command="{Binding UpdateProcesses}"/>
+
+            </Grid>
+
 
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
@@ -178,6 +199,6 @@
                         Command="{Binding ChangeColor}"/>
             </Grid>
         </Grid>
-        
+
     </Grid>
 </Window>

@@ -12,8 +12,9 @@ namespace WindowsDrimmer.ViewModels
         private ICollection<Process> _processesSource;
         private string _pName,
                        _pId,
-                        _hWindow;
-        private RelayCommand _changeColor;
+                       _hWindow;
+        private RelayCommand _changeColor,
+                             _updateProcesses;
         #endregion
 
         #region Properties
@@ -30,6 +31,21 @@ namespace WindowsDrimmer.ViewModels
                 obj=> 
                 {
                     return _selectProcess != null && _selectProcess.MainWindowHandle != IntPtr.Zero;
+                }));
+            }
+        }
+
+        public RelayCommand UpdateProcesses
+        {
+            get
+            {
+                return _updateProcesses ?? (_updateProcesses = new RelayCommand(obj =>
+                {
+                    ProcessesSource = getProcessApp(Process.GetProcesses());
+                },
+                obj =>
+                {
+                    return _processesSource != null;
                 }));
             }
         }
