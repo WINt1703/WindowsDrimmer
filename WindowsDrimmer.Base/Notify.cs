@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace WindowsDrimmer.Base
+namespace WindowsDimmer.Base
 {
     public abstract class ViewModelBase : INotifyPropertyChanged
     {

@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="WindowsDimmer.Views.DrimmerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WindowsDimmer.Views" 
+             xmlns:vm="clr-namespace:WindowsDimmer.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <vm:DrimmerViewModel/>
+    </UserControl.DataContext>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="257*"/>
+            <ColumnDefinition Width="127*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <DataGrid Grid.Row="0"
+                      IsReadOnly ="True"
+                      ItemsSource="{Binding ProcessesSource}"
+                      SelectedItem="{Binding SelectProcess}"                        
+                      RowHeaderWidth="0"
+                      >
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn  Header="ProcessesId" Binding="{Binding Id, Mode=OneTime}" Width="*"/>
+                    <DataGridTextColumn  Header="ProcessTitle" Binding="{Binding MainWindowTitle, Mode=OneTime}" Width="*"/>
+                    <DataGridTextColumn  Header="ProcessName" Binding="{Binding ProcessName, Mode=OneTime}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+            <Button HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Margin="20" 
+                        Padding="8" 
+                        Content="Update Processes" 
+                        Grid.Row="1"
+                        Command="{Binding UpdateProcessesCommamd}"/>
+
+        </Grid>
+
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="25*"/>
+            </Grid.RowDefinitions>
+
+            <Label HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Row="0" Content="{Binding PId }"/>
+            <Label HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Row="1" Content="{Binding PName}"/>
+            <Label HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Row="2" Content="{Binding HWindow}"/>
+            <Button Grid.Row="3" 
+                        Content="Color Change"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Padding="8" 
+                        Command="{Binding ChangeColorCommamd}"/>
+        </Grid>
+
+    </Grid>
+
+</UserControl>

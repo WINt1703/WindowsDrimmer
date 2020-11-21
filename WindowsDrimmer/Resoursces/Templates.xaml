@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:WindowsDimmer.Views" 
+                    xmlns:ts="clr-namespace:WindowsDimmer.TemplateSelectors">
+
+    <ts:MainWindowTemplateSelector x:Key="MainWindowTemplateSelector"/>
+    
+    <DataTemplate x:Key="DrimmerTemplate">
+        <vm:DrimmerView/>
+    </DataTemplate>
+   
+    <DataTemplate x:Key="ConfigTemplate">
+        <vm:ConfigView/>
+    </DataTemplate>
+
+</ResourceDictionary>

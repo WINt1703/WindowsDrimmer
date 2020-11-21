@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace WindowsDrimmer.Base
+namespace WindowsDimmer.Base
 {
     public class RelayCommand : ICommand
     {

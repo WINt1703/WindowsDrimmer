@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WindowsDrimmer.Config
+namespace WindowsDimmer.Views
 {
     /// <summary>
-    /// Interaction logic for Config.xaml
+    /// Interaction logic for DrimmerView.xaml
     /// </summary>
-    public partial class Config : Window
+    public partial class DrimmerView : UserControl
     {
-        public Config()
+        public DrimmerView()
         {
             InitializeComponent();
         }
